@@ -43,6 +43,38 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
             map.setRegion(newRegion, animated: true)
     }
     
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        let userLocation = locations[0]
+        
+        let latitude = userLocation.coordinate.latitude
+        let longitude = userLocation.coordinate.longitude
+        
+        
+        displayLocation(latitude: latitude, longitude: longitude, title: "my Location", subtitle: "you are here")
+    }
+    
+    func displayLocation(latitude: CLLocationDegrees, longitude: CLLocationDegrees, title: String, subtitle: String){
+        
+        //DEFINE SPAN
+        let latdelta: CLLocationDegrees = 0.05
+        let lngdelta: CLLocationDegrees = 0.05
+        
+        let span = MKCoordinateSpan(latitudeDelta: latdelta, longitudeDelta: lngdelta)
+        
+        
+        //DEFINE LOCATION
+        let location = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+        
+        
+        //DEFINE REGION
+        let region = MKCoordinateRegion(center: location, span: span)
+        
+        
+        //SET REGION ON MAP
+        map.setRegion(region, animated: true)
+        
+    }
     
 }
 
