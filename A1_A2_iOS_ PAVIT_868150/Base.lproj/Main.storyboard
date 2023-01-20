@@ -1,24 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="A1_A2_iOS__PAVIT_868150" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Pq-Da-34B">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ayj-et-fXt">
+                                <rect key="frame" x="16" y="679" width="62" height="58"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="58" id="b8O-Sd-rtp"/>
+                                    <constraint firstAttribute="width" constant="62" id="mGl-sX-LVg"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" image="plus" catalog="system" cornerStyle="capsule"/>
+                                <connections>
+                                    <action selector="zoomIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zcv-qW-nWG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uan-hv-eUx">
+                                <rect key="frame" x="16" y="745" width="62" height="58"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" image="minus" catalog="system" cornerStyle="capsule"/>
+                                <connections>
+                                    <action selector="zoomOut:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hfP-bs-dJp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TMG-Or-YVi">
+                                <rect key="frame" x="304" y="704" width="73" height="72"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="73" id="Sne-eY-HAr"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" image="location.north.fill" catalog="system" cornerStyle="capsule"/>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="5Pq-Da-34B" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9Te-c6-69l"/>
+                            <constraint firstItem="uan-hv-eUx" firstAttribute="top" secondItem="Ayj-et-fXt" secondAttribute="bottom" constant="8" id="G4k-wn-I5L"/>
+                            <constraint firstItem="5Pq-Da-34B" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="PDD-NY-35J"/>
+                            <constraint firstItem="5Pq-Da-34B" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="PYU-WN-Hsv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="uan-hv-eUx" secondAttribute="bottom" constant="15" id="VNg-Rf-6HX"/>
+                            <constraint firstItem="TMG-Or-YVi" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="j6y-Fz-5Ix"/>
+                            <constraint firstItem="Ayj-et-fXt" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="620" id="jLg-R9-mom"/>
+                            <constraint firstItem="Ayj-et-fXt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="ky0-2a-fXx"/>
+                            <constraint firstItem="5Pq-Da-34B" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="lAU-yW-2DH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="TMG-Or-YVi" secondAttribute="bottom" constant="42" id="muQ-3E-woc"/>
+                            <constraint firstItem="TMG-Or-YVi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="645" id="obx-mo-06U"/>
+                            <constraint firstItem="Ayj-et-fXt" firstAttribute="trailing" secondItem="uan-hv-eUx" secondAttribute="trailing" id="yXt-hC-mgF"/>
+                            <constraint firstItem="Ayj-et-fXt" firstAttribute="leading" secondItem="uan-hv-eUx" secondAttribute="leading" id="zIk-pv-ODM"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="directionBtn" destination="TMG-Or-YVi" id="LVt-Qh-yZI"/>
+                        <outlet property="map" destination="5Pq-Da-34B" id="nbB-bi-l3K"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="135.1145038167939" y="3.5211267605633805"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="location.north.fill" catalog="system" width="110" height="128"/>
+        <image name="minus" catalog="system" width="128" height="26"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
