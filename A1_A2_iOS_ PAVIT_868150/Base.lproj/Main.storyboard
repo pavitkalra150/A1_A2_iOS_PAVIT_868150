@@ -48,6 +48,24 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" image="location.north.fill" catalog="system" cornerStyle="capsule"/>
+                                <connections>
+                                    <action selector="drawRoute:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EAX-Za-BHi"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search an address" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NbR-Y9-Ygo">
+                                <rect key="frame" x="16" y="59" width="295" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8if-ma-Eq5">
+                                <rect key="frame" x="315" y="59" width="50" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" image="magnifyingglass" catalog="system" cornerStyle="large"/>
+                                <connections>
+                                    <action selector="searchAddress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="quf-j7-GvH"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -69,6 +87,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addressTextField" destination="NbR-Y9-Ygo" id="aJm-z0-fac"/>
                         <outlet property="directionBtn" destination="TMG-Or-YVi" id="LVt-Qh-yZI"/>
                         <outlet property="map" destination="5Pq-Da-34B" id="nbB-bi-l3K"/>
                     </connections>
@@ -80,6 +99,7 @@
     </scenes>
     <resources>
         <image name="location.north.fill" catalog="system" width="110" height="128"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="117"/>
         <image name="minus" catalog="system" width="128" height="26"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
